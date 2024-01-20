@@ -10,7 +10,7 @@ public abstract class AbstractRoom implements Place {
 
     protected RoomType roomType;
 
-    protected int column;
+    public int column;
 
     public int hight;
 
