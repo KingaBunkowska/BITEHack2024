@@ -12,6 +12,11 @@ public class Party {
     private List<Hero> heroes;
     private Place place;
 
+    public Party(List<Hero> heroes, Place place){
+        this.heroes = heroes;
+        this.place = place;
+    }
+
     public List<Hero> getHeroes(){
         return this.heroes;
     }

@@ -1,7 +1,5 @@
 package oop.model.dungeon;
 
-import oop.model.*;
-
 import java.util.*;
 
 
@@ -42,7 +40,7 @@ public class Dungeon {
                     currRooms.add(new EncounterRoom(RoomType.ENCOUNTER,i,j));
                 }
                 else if(chance<=7) {
-                    currRooms.add(new Attributes.LootRoom(RoomType.LOOT,i,j));
+                    currRooms.add(new LootRoom(RoomType.LOOT,i,j));
                 }
                 else if(chance<10) {
                     currRooms.add(new TestRoom(RoomType.TEST,i,j));
@@ -71,8 +69,8 @@ public class Dungeon {
 
             for (Corridor corridor : corridors){
                 System.out.println(corridor.toString());
-                predRooms.get(corridor.getBeg()).addChildNeigbour(currRooms.get(corridor.getEnd()));
-                currRooms.get(corridor.getEnd()).addParentNeigbour(predRooms.get(corridor.getBeg()));
+                predRooms.get(corridor.getBeg()).addChildNeighbour(currRooms.get(corridor.getEnd()));
+                currRooms.get(corridor.getEnd()).addParentNeighbour(predRooms.get(corridor.getBeg()));
             }
 
             allRooms.addAll(currRooms);
@@ -81,8 +79,8 @@ public class Dungeon {
 
         EncounterRoom encounterRoom= new EncounterRoom(RoomType.ENCOUNTER,size,0);
         for (AbstractRoom room : predRooms){
-            room.addChildNeigbour(encounterRoom);
-            encounterRoom.addParentNeigbour(room);
+            room.addChildNeighbour(encounterRoom);
+            encounterRoom.addParentNeighbour(room);
         }
         allRooms.add(encounterRoom);
 

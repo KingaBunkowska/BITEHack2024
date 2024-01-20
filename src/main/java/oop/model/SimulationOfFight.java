@@ -3,21 +3,20 @@ package oop.model;
 import oop.model.entities.Enemy;
 import oop.model.entities.Hero;
 
-public class simulationOfFight {
+public class SimulationOfFight {
     private Enemy enemy;
     private Party party;
 
-    public simulationOfFight(Party party, Enemy enemy){
+    public SimulationOfFight(Party party, Enemy enemy){
         this.party = party;
         this.enemy = enemy;
     }
 
     // if true party wins
-    public boolean simulateFight(){
+    public void simulateFight(){
         while (!enemy.isDead() && !party.getHeroes().isEmpty()){
             simulateTurn();
         }
-        return !party.getHeroes().isEmpty();
     }
     private void simulateTurn(){
         enemy.attack(party);
@@ -34,5 +33,4 @@ public class simulationOfFight {
             }
         }
     }
-
 }

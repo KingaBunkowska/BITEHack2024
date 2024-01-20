@@ -16,9 +16,4 @@ public enum RoomType {
         };
     }
 
-
-
-
-
-
 }

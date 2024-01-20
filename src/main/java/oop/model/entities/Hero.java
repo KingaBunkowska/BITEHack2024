@@ -35,5 +35,13 @@ public class Hero extends Entity {
     public void attack(Entity opponent){
         int damage = this.calculateDamage(opponent);
         opponent.takeDamage(damage);
+
+        System.out.println(this);
+        System.out.println("Hero attacked for " + damage + "  enemy has " + opponent.getHealth());
+    }
+
+    @Override
+    public String toString(){
+        return "Profession: " + profession.toString() + "\n" + super.toString();
     }
 }

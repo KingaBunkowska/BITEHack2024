@@ -8,11 +8,11 @@ public enum CallOf{
     MYSTERY;
 
     private static final Random random = new Random();
-    public boolean isWeak(CallOf callOf){
+    public boolean isStrong(CallOf callOf){
         return CallOf.values()[this.ordinal()].next().equals(callOf);
     }
 
-    public boolean isStrong(CallOf callOf){
+    public boolean isWeak(CallOf callOf){
         return this.previous().equals(callOf);
     }
 
@@ -25,6 +25,6 @@ public enum CallOf{
     }
 
     public CallOf previous(){
-        return CallOf.values()[(this.ordinal()-1)%values().length];
+        return CallOf.values()[(this.ordinal()+ values().length-1)%values().length];
     }
 }
