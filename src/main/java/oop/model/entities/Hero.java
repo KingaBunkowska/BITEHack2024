@@ -14,7 +14,7 @@ public class Hero extends Entity {
 
     public Hero(){
         super(new Attributes(
-                (int)random.nextGaussian(15, 1),
+                (int)random.nextGaussian(100, 1),
                 (int)random.nextGaussian(10, 1),
                 (int)random.nextGaussian(10, 1),
                 (int)random.nextGaussian(10, 1)
