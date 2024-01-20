@@ -94,6 +94,7 @@ public class Dungeon {
         }
     }
 
-
-
+    public List<AbstractRoom> getAllRooms() {
+        return allRooms;
+    }
 }
