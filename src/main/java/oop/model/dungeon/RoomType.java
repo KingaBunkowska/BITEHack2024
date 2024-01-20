@@ -1,4 +1,4 @@
-package oop.model;
+package oop.model.dungeon;
 
 public enum RoomType {
     ENCOUNTER,

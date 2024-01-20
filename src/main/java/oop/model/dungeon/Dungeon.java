@@ -1,4 +1,6 @@
-package oop.model;
+package oop.model.dungeon;
+
+import oop.model.*;
 
 import java.util.*;
 
@@ -40,7 +42,7 @@ public class Dungeon {
                     currRooms.add(new EncounterRoom(RoomType.ENCOUNTER,i,j));
                 }
                 else if(chance<=7) {
-                    currRooms.add(new LootRoom(RoomType.LOOT,i,j));
+                    currRooms.add(new Attributes.LootRoom(RoomType.LOOT,i,j));
                 }
                 else if(chance<10) {
                     currRooms.add(new TestRoom(RoomType.TEST,i,j));

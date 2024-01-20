@@ -1,4 +1,4 @@
-package oop.model;
+package oop.model.dungeon;
 
 import java.util.ArrayList;
 import java.util.List;
