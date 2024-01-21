@@ -28,10 +28,13 @@ public class SimulationOfFight {
     }
 
     private void cleanDead(){
-        for (Hero hero : party.getHeroes()){
-            if (hero.isDead()){
-                party.remove(hero);
+        int i = 0;
+        while (i<party.getHeroes().size()){
+            if (party.getHeroes().get(i).isDead()){
+                party.remove(party.getHeroes().get(i));
+                i--;
             }
+            i++;
         }
     }
 }

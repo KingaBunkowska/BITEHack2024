@@ -5,20 +5,18 @@ import java.util.Random;
 public class BinomialDistribution {
     private static Random random = new Random();
     public static int getRandomBinomial(int n, float p) {
-        float rand = random.nextFloat();
-        float cdf = 0;
 
-        int current_value = 0;
-        while (cdf<=rand){
-            float probability = binomial_theorem(n, current_value);
-            cdf += probability;
+        int result = 0;
+        for(int i=0; i<n; i++){
+            float rand = random.nextFloat();
+            if(rand<=p){
+                result++;
+            }
         }
-
-        return current_value;
-
+        return result;
     }
 
-    private static int factorial(int n){
+    private static double factorial(int n){
         int result = 1;
         for (int i = 2; i<=n; i++){
             result *= i;
@@ -26,7 +24,7 @@ public class BinomialDistribution {
         return result;
     }
 
-    private static float binomial_theorem(int n, int k){
-        return factorial(n)/factorial(k)/factorial(n-k);
+    private static double binomial_theorem(int n, int k){
+        return  factorial(n) / factorial(k)/factorial(n-k);
     }
 }

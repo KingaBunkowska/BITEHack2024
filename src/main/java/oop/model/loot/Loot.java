@@ -18,4 +18,9 @@ public class Loot {
     public int getValue() {
         return value;
     }
+
+    @Override
+    public String toString(){
+        return "Loot: "+this.typeOfItem + "\t Value: " + value;
+    }
 }
