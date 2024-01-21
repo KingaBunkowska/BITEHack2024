@@ -11,10 +11,10 @@ public class LootGenerator {
         int number = BinomialDistribution.getRandomBinomial(level, progress);
         int itemLevel = 1;
 
-        if (number>=20){
+        if (number>=8){
             itemLevel = 3;
         }
-        else if(number>=10){
+        else if(number>=5){
             itemLevel = 2;
         }
 

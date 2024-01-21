@@ -57,15 +57,21 @@ public class Game {
     }
 
     private void generateLoot(int level, float p) {
+
+        Random random = new Random();
+
         List<Loot> loots = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
             Loot loot = LootGenerator.getRandomLootItem(level, p);
             loots.add(loot);
         }
 
-        Loot lootChosen = loots.get(1); //this has to change into something from UI
-        Hero heroChosen = this.party.getHeroes().get(1); //change to UI value
+        System.out.println("  " + loots);
 
+        Loot lootChosen = loots.get(random.nextInt(0, 3)); //this has to change into something from UI
+        System.out.println("\nChoosen loot: " + lootChosen);
+        Hero heroChosen = this.party.getHeroes().get(random.nextInt(0, this.getParty().getHeroes().size())); //change to UI value
+        System.out.println("Loot recieved by " + heroChosen+"\n");
         party.addValue(heroChosen.useItemReturnValue(lootChosen));
     }
 
@@ -116,7 +122,7 @@ public class Game {
 
         for (int i=0; i<n; i++){
 
-            int power = 10;
+            int power = 20;
             Kind kind = Kind.SCARY_CAT;
             CallOf callOf = CallOf.MYSTERY;
             int maxHealth = 50;
