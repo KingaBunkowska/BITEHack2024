@@ -3,8 +3,10 @@ package oop.model;
 import oop.model.dungeon.Dungeon;
 import oop.model.dungeon.EmptyRoom;
 import oop.model.dungeon.RoomType;
+import oop.model.entities.CallOf;
 import oop.model.entities.Enemy;
 import oop.model.entities.Hero;
+import oop.model.entities.Kind;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +20,7 @@ public class Main {
 
         // test fight
 
-        Enemy enemy = new Enemy(new Attributes(100, 23, 21, 19));
+        Enemy enemy = new Enemy(15, Kind.MANYLEGS, CallOf.BLOOD, 60);
         Hero hero1 = new Hero();
         Hero hero2 = new Hero();
 

@@ -4,7 +4,10 @@ import oop.model.Attributes;
 
 public abstract class Entity {
     protected Attributes attributes;
-    protected final CallOf callOf;
+    protected CallOf callOf;
+    public Entity(){
+        callOf = CallOf.getRandomValue();
+    }
 
     public Entity(Attributes attributes){
         this.attributes = attributes;
