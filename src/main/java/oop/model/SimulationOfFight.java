@@ -13,10 +13,11 @@ public class SimulationOfFight {
     }
 
     // if true party wins
-    public void simulateFight(){
+    public boolean simulateFight(){
         while (!enemy.isDead() && !party.getHeroes().isEmpty()){
             simulateTurn();
         }
+        return !party.getHeroes().isEmpty();
     }
     private void simulateTurn(){
         enemy.attack(party);

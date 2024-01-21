@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Dungeon {
 
-    private int size;
+    static int size;
 
     private List<AbstractRoom> allRooms=new ArrayList<>();
 
