@@ -28,7 +28,7 @@ public class Game {
 
             if (isFightWon){
                 generateLoot(enemy.getLevel(), (float) encounterRoom.column / dungeon.getAllRooms().size());
-
+                party.clean();
             }
         }
 
@@ -38,6 +38,7 @@ public class Game {
         else if(room.roomType==RoomType.TEST){
             TestRoom testRoom = (TestRoom) room;
             testRoom.startTest(party);
+            party.clean();
         }
 
         if (room.column == Dungeon.getSize()-1){
@@ -83,6 +84,10 @@ public class Game {
         return dungeon;
     }
 
+    public Party getParty() {
+        return party;
+    }
+
     public void initializeParty(){
         List<Hero> heroes = new LinkedList<>();
 
@@ -126,7 +131,6 @@ public class Game {
 
     private void endGame(){
         System.out.println("GAME OVER");
-
     }
 
 
