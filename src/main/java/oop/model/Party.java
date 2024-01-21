@@ -26,6 +26,14 @@ public class Party {
         heroes.remove(hero);
     }
 
+    public void clean(){
+        for (Hero hero : heroes){
+            if (hero.isDead()){
+                remove(hero);
+            }
+        }
+    }
+
 
     public void move(AbstractRoom place) {
         this.place = place;
