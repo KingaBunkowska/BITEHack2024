@@ -37,7 +37,7 @@ public class Hero extends Entity {
         opponent.takeDamage(damage);
 
         System.out.println(this);
-        System.out.println("Hero attacked for " + damage + "  enemy has " + opponent.getHealth());
+        System.out.println("\nHero attacked for " + damage + "  enemy has " + opponent.getHealth());
     }
 
     @Override

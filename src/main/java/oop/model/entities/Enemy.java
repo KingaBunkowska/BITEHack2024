@@ -5,12 +5,30 @@ import oop.model.Party;
 
 import java.util.Comparator;
 
+import static oop.model.entities.Hero.random;
+
 public class Enemy extends Entity{
-    private Kind kind;
+    private final Kind kind;
+
+
 
     public Enemy(Attributes attributes) {
         super(attributes);
         kind = Kind.getRandomKind();
+    }
+
+    public Enemy(int power, Kind kind, CallOf callOf, int maxHealth){
+        super();
+        Attributes att = new Attributes(
+                (int)Math.max(random.nextGaussian(maxHealth, 10),1),
+                (int)Math.max(random.nextGaussian(power, 4), 1),
+                (int)Math.max(random.nextGaussian(power, 4), 1),
+                (int)Math.max(random.nextGaussian(power, 4), 1)
+        );
+        this.kind = kind;
+        this.callOf = callOf;
+
+        this.attributes = att.add(kind.getShiftOfAttributes());
     }
 
     public Behaviour getBehaviour() {
@@ -23,7 +41,7 @@ public class Enemy extends Entity{
         target.takeDamage(damage);
 
         System.out.println(this);
-        System.out.println("Enemy attacked for " + damage + "  Hero left with " + target.getHealth());
+        System.out.println("\nEnemy attacked for " + damage + "  Hero left with " + target.getHealth());
     }
 
     @Override

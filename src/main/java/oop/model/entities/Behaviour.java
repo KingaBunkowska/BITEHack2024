@@ -19,15 +19,28 @@ public class Behaviour {
         List<Hero> suitableTargets = party.getHeroes().stream().sorted(comparator).toList();
         int rand = random.nextInt(100);
         int index = 0;
-        if (rand>=95){
-            index = suitableTargets.size()-1;
+        if (suitableTargets.size()==4){
+            if (rand>=95){
+                index = suitableTargets.size()-1;
+            }
+            else if (rand >= 80){
+                index = Math.min(suitableTargets.size()-2, 0);
+            }
+            else if (rand >= 56){
+                index = Math.min(suitableTargets.size()-3, 0);
+            }
         }
-        else if (rand >= 80){
-            index = Math.min(suitableTargets.size()-2, 0);
+        else if (suitableTargets.size()==3){
+            if(rand>=85){
+                index = suitableTargets.size()-1;
+            }
+            else if (rand>=60){
+                index = suitableTargets.size()-2;
+            }
         }
-        else if (rand >= 56){
-            index = Math.min(suitableTargets.size()-3, 0);
-        }
+        else if (suitableTargets.size()==2)
+            if (rand>=70)
+                index = suitableTargets.size()-1;
 
         return suitableTargets.get(index);
     }
