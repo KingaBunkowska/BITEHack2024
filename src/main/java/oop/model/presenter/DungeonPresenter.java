@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import oop.model.Game;
 import oop.model.HeroListener;
+import oop.model.Party;
 import oop.model.RoomRepresentation;
 import oop.model.dungeon.AbstractRoom;
 import oop.model.dungeon.Dungeon;
@@ -41,7 +42,7 @@ public class DungeonPresenter implements HeroListener {
     private Game game;
 
     List<RoomRepresentation> roomBoxes = new ArrayList<>();
-
+    private Party party;
 
     private void clearGrid() {
         if (graphGrid.getChildren().size() != 0) {
@@ -70,6 +71,8 @@ public class DungeonPresenter implements HeroListener {
     public void onGameStarted(Game game) {
 
         Dungeon dungeon = game.getDungeon();
+        party = game.getParty();
+
         dungeon.getAllRooms().forEach((value) -> {
             roomBoxes.add(new RoomRepresentation(value, game));
         });
@@ -83,35 +86,35 @@ public class DungeonPresenter implements HeroListener {
 
         List<Hero> heroes = game.getParty().getHeroes();
 
-            Hero hero = heroes.get(0);
-            List<Label> stats = new LinkedList<>();
-            stats.add(hp1);
-            stats.add(str1);
-            stats.add(ag1);
-            stats.add(int1);
+        Hero hero = heroes.get(0);
+        List<Label> stats = new LinkedList<>();
+        stats.add(hp1);
+        stats.add(str1);
+        stats.add(ag1);
+        stats.add(int1);
 
-            heroToList.put(hero, stats);
-            hero.addListener(this);
+        heroToList.put(hero, stats);
+        hero.addListener(this);
 
-            List<Label> stats2 = new LinkedList<>();
-            hero = heroes.get(1);
-            stats2.add(hp2);
-            stats2.add(str2);
-            stats2.add(ag2);
-            stats2.add(int2);
+        List<Label> stats2 = new LinkedList<>();
+        hero = heroes.get(1);
+        stats2.add(hp2);
+        stats2.add(str2);
+        stats2.add(ag2);
+        stats2.add(int2);
 
-            heroToList.put(hero, stats2);
-            hero.addListener(this);
+        heroToList.put(hero, stats2);
+        hero.addListener(this);
 
         List<Label> stats3 = new LinkedList<>();
-            hero = heroes.get(2);
-            stats3.add(hp3);
-            stats3.add(str3);
-            stats3.add(ag3);
-            stats3.add(int3);
+        hero = heroes.get(2);
+        stats3.add(hp3);
+        stats3.add(str3);
+        stats3.add(ag3);
+        stats3.add(int3);
 
-            heroToList.put(hero, stats3);
-            hero.addListener(this);
+        heroToList.put(hero, stats3);
+        hero.addListener(this);
 
         List<Label> stats4 = new LinkedList<>();
         hero = heroes.get(3);
@@ -122,8 +125,6 @@ public class DungeonPresenter implements HeroListener {
 
         heroToList.put(hero, stats4);
         hero.addListener(this);
-
-
         }
     Map<Hero, List<Label>> heroToList = new HashMap<>();
 
@@ -134,5 +135,7 @@ public class DungeonPresenter implements HeroListener {
         label.get(1).setText(hero.getAttributes().getStrength()+"");
         label.get(2).setText(hero.getAttributes().getAgility()+"");
         label.get(3).setText(hero.getAttributes().getIntelligence()+"");
+
+        money.setText(party.getValue()+"");
     }
 }
