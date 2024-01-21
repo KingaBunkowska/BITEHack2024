@@ -2,6 +2,7 @@ package oop.model.dungeon;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class AbstractRoom implements Place {
 
@@ -52,4 +53,18 @@ public abstract class AbstractRoom implements Place {
         return communication;
 
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractRoom that = (AbstractRoom) o;
+        return column == that.column && hight == that.hight && Objects.equals(childNeighbours, that.childNeighbours) && Objects.equals(parentNeigbours, that.parentNeigbours) && roomType == that.roomType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(childNeighbours, parentNeigbours, roomType, column, hight);
+    }
+
 }

@@ -6,27 +6,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import oop.model.dungeon.Dungeon;
 import oop.model.presenter.DungeonPresenter;
+import oop.model.presenter.MenuPresenter;
 
-public class DungeonMap{
-
-    public DungeonMap(Stage primaryStage) throws Exception {
+public class Menu extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("dungeonVisualization.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("menuVisualization.fxml"));
         AnchorPane viewRoot = loader.load();
         configureStage(primaryStage,viewRoot);
-        DungeonPresenter dungeonPresenter =loader.getController();
+        MenuPresenter menuPresenter =loader.getController();
         primaryStage.show();
-        Dungeon dungeon = new Dungeon(8);
-        dungeonPresenter.onGameStarted(dungeon);
-        dungeonPresenter.drawMap();
     }
 
     private void configureStage(Stage primaryStage, Parent root) {
         var scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Dungeon");
+        primaryStage.setTitle("Menu");
+
     }
 }
