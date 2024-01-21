@@ -2,6 +2,7 @@ package oop.model.entities;
 
 import oop.model.Attributes;
 import oop.model.entities.Entity;
+import oop.model.loot.Loot;
 
 import java.util.Random;
 
@@ -38,6 +39,11 @@ public class Hero extends Entity {
 
         System.out.println(this);
         System.out.println("\nHero attacked for " + damage + "  enemy has " + opponent.getHealth());
+    }
+
+    public int useItemReturnValue(Loot loot){
+        this.attributes = this.attributes.add(loot.getTypeOfItem().getAttributes());
+        return loot.getValue();
     }
 
     @Override

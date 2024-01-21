@@ -31,5 +31,8 @@ public enum LootItems {
         return Arrays.stream(values()).filter(lootItems -> (lootItems.level == level)).toList();
     }
 
+    public Attributes getAttributes() {
+        return attributes;
+    }
 
 }

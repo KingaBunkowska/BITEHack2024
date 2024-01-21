@@ -7,7 +7,7 @@ public class Dungeon {
 
     static int size;
 
-    private List<AbstractRoom> allRooms=new ArrayList<>();
+    private final List<AbstractRoom> allRooms=new ArrayList<>();
 
 
     public Dungeon(int size){
@@ -51,16 +51,13 @@ public class Dungeon {
             }
             int parents=predRooms.size();
             int children=currRooms.size();
-            System.out.println(parents+ " "+children+" "+ i+" current");
             List<Corridor> corridors= new ArrayList<>();
             for (int j=0;j<parents;j++){
                 int ending = rand.nextInt(children);
-                System.out.println(j+" "+ending+" do dziecka");
                 corridors.add(new Corridor(j,ending));
             }
             for (int j=0;j<children;j++){
                 int begginings = rand.nextInt(parents);
-                System.out.println(begginings+" "+j+" do ojca");
                 corridors.add(new Corridor(begginings,j));
             }
 
@@ -94,5 +91,11 @@ public class Dungeon {
 
     public List<AbstractRoom> getAllRooms() {
         return allRooms;
+    }
+
+    public AbstractRoom getFirstRoom(){return allRooms.get(0);}
+
+    public static int getSize() {
+        return size;
     }
 }
