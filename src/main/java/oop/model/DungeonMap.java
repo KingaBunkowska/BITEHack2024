@@ -10,7 +10,9 @@ import javafx.stage.Stage;
 import oop.model.dungeon.Dungeon;
 import oop.model.presenter.DungeonPresenter;
 
+
 public class DungeonMap{
+    private Game game;
 
     public DungeonMap(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
@@ -19,8 +21,8 @@ public class DungeonMap{
         configureStage(primaryStage,viewRoot);
         DungeonPresenter dungeonPresenter =loader.getController();
         primaryStage.show();
-        Dungeon dungeon = new Dungeon(8);
-        dungeonPresenter.onGameStarted(dungeon);
+        game = new Game();
+        dungeonPresenter.onGameStarted(game);
         dungeonPresenter.drawMap();
     }
 

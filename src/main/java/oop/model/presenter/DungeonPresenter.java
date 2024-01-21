@@ -7,6 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import oop.model.Game;
 import oop.model.RoomRepresentation;
 import oop.model.dungeon.AbstractRoom;
 import oop.model.dungeon.Dungeon;
@@ -18,7 +19,10 @@ public class DungeonPresenter {
     @FXML
     private GridPane graphGrid;
 
+    private Game game;
+
     List<RoomRepresentation> roomBoxes = new ArrayList<>();
+
 
     private void clearGrid() {
         if (graphGrid.getChildren().size() != 0) {
@@ -27,6 +31,7 @@ public class DungeonPresenter {
             graphGrid.getRowConstraints().clear();
         }
     }
+
 
     public void drawMap() {
         clearGrid();
@@ -42,34 +47,21 @@ public class DungeonPresenter {
 
     }
 
-//    public  void initialize(){
-//        dungeonBackground.setBackground(Color.white);
-//        GraphicsContext gc = dungeonBackground.getGraphicsContext2D();
-//        gc.setFill(Color.BLUE);
-//        gc.fillRect(50,50,100,100);
-//        gc.lineTo(150.5, 30.5);
-//    }
 
-    public void onGameStarted(Dungeon dungeon) {
+    public void onGameStarted(Game game) {
 
+        Dungeon dungeon = game.getDungeon();
         dungeon.getAllRooms().forEach((value) -> {
-            roomBoxes.add(new RoomRepresentation(value));
+            roomBoxes.add(new RoomRepresentation(value, game));
         });
-        System.out.println("BajoJajo");
         for (int i = 0; i < roomBoxes.size(); i++) {
-            if (roomBoxes.get(i).children.size() != 0) {
-                System.out.println(roomBoxes.get(i).children.get(0).toString());
-            }
             for (int j = i; j < roomBoxes.size(); j++) {
-//                System.out.println(roomBoxes.get(i).toString()+" "+roomBoxes.get(j).toString());
                 if (roomBoxes.get(i).getChildren().contains(roomBoxes.get(j).getAbstractRoom())) {
-                    System.out.println(roomBoxes.get(i).toString() + " " + roomBoxes.get(j).toString());
                     roomBoxes.get(i).children.add(roomBoxes.get(j));
                 }
             }
         }
-
-
     }
+
 
 }

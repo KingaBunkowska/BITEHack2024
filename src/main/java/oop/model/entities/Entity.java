@@ -41,7 +41,6 @@ public abstract class Entity {
         }
         else if (callOf.isWeak(opponent.callOf)){
             damage = (int) Math.floor(damage * 0.5);
-            System.out.println("Rounded to " + damage);
         }
 
         return (int)damage - defence * Math.min((damage/defence), 1);
