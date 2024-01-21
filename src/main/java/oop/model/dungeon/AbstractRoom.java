@@ -8,7 +8,7 @@ public abstract class AbstractRoom implements Place {
     private List<AbstractRoom> childNeighbours = new ArrayList<>();
     private List<AbstractRoom> parentNeigbours= new ArrayList<>();
 
-    protected RoomType roomType;
+    public RoomType roomType;
 
     public int column;
 

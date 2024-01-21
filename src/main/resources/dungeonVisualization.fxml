@@ -16,25 +16,25 @@
       </image>
    </ImageView>
 
-   <GridPane fx:id="graphGrid" alignment="CENTER" hgap="10" layoutX="1259.0" layoutY="39.0" prefHeight="285.0" prefWidth="595.0" vgap="10" />
+   <GridPane fx:id="graphGrid" alignment="CENTER" hgap="20" layoutX="1259.0" layoutY="39.0" prefHeight="285.0" prefWidth="595.0" vgap="10" />
 
-   <Label fx:id="money"  layoutX="1641.0" layoutY="338.0" prefHeight="17.0" prefWidth="90.0" text="Hajs" />
-   <Label fx:id="str1" layoutX="340.0" layoutY="841.0" text="Str1" />
-   <Label fx:id="int1" layoutX="335.0" layoutY="905.0" text="int1" />
-   <Label fx:id="ag1" layoutX="324.0" layoutY="961.0" text="ag1" />
-   <Label fx:id="str2" layoutX="731.0" layoutY="836.0" text="str2" />
-   <Label fx:id="int2" layoutX="726.0" layoutY="900.0" text="int2" />
-   <Label fx:id="ag2" layoutX="715.0" layoutY="956.0" text="ag2" />
-   <Label fx:id="str3" layoutX="1111.0" layoutY="835.0" text="str3" />
-   <Label fx:id="int3" layoutX="1106.0" layoutY="899.0" text="int3" />
-   <Label fx:id="ag3" layoutX="1095.0" layoutY="955.0" text="ag3" />
-   <Label fx:id="str4" layoutX="1489.0" layoutY="838.0" text="str4" />
-   <Label fx:id="int4" layoutX="1484.0" layoutY="902.0" text="int4" />
-   <Label fx:id="ag4" layoutX="1473.0" layoutY="955.0" text="ag4" />
-   <Label fx:id="hp1" layoutX="257.0" layoutY="785.0" text="hp1" />
-   <Label fx:id="hp2" layoutX="635.0" layoutY="785.0" text="hp2" />
-   <Label fx:id="hp3" layoutX="1009.0" layoutY="785.0" text="hp3" />
-   <Label fx:id="hp4" layoutX="1389.0" layoutY="785.0" text="hp4" />
+   <Label fx:id="money"  layoutX="1661.0" layoutY="338.0" prefHeight="17.0" prefWidth="90.0" text="Hajs" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="str1" layoutX="350.0" layoutY="831.0" text="Str1" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="int1" layoutX="345.0" layoutY="895.0" text="int1" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="ag1" layoutX="334.0" layoutY="951.0" text="ag1" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="str2" layoutX="741.0" layoutY="826.0" text="str2" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="int2" layoutX="736.0" layoutY="890.0" text="int2" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="ag2" layoutX="725.0" layoutY="946.0" text="ag2" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="str3" layoutX="1121.0" layoutY="825.0" text="str3" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="int3" layoutX="1116.0" layoutY="889.0" text="int3" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="ag3" layoutX="1105.0" layoutY="945.0" text="ag3" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="str4" layoutX="1499.0" layoutY="828.0" text="str4" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="int4" layoutX="1494.0" layoutY="892.0" text="int4" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="ag4" layoutX="1483.0" layoutY="945.0" text="ag4" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="hp1" layoutX="267.0" layoutY="775.0" text="hp1" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="hp2" layoutX="645.0" layoutY="775.0" text="hp2" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="hp3" layoutX="1019.0" layoutY="775.0" text="hp3" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
+   <Label fx:id="hp4" layoutX="1399.0" layoutY="775.0" text="hp4" style="-fx-font-size: 30px; -fx-text-fill: white;"/>
 
    <ImageView fitHeight="511.0" fitWidth="831.0" layoutX="-893.0" layoutY="-503.0" pickOnBounds="true" preserveRatio="true" x="1045.0" y="585.0">
       <image>
