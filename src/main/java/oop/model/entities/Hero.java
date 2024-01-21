@@ -9,7 +9,6 @@ import java.util.Random;
 public class Hero extends Entity {
 
     private final Profession profession;
-    private final CallOf callOf;
     static Random random = new Random();
 
     public Hero(){
@@ -22,17 +21,27 @@ public class Hero extends Entity {
 
         this.profession = Profession.getRandomProfession();
         updateAttribute(profession);
-        this.callOf = CallOf.getRandomValue();
     }
     public Hero(Attributes attributes) {
         super(attributes);
         this.profession = Profession.getRandomProfession();
         updateAttribute(profession);
-        this.callOf = CallOf.getRandomValue();
     }
 
     private void updateAttribute(Profession profession){
         this.attributes = this.attributes.add(profession.getShiftOfAttributes());
     }
 
+    public void attack(Entity opponent){
+        int damage = this.calculateDamage(opponent);
+        opponent.takeDamage(damage);
+
+        System.out.println(this);
+        System.out.println("Hero attacked for " + damage + "  enemy has " + opponent.getHealth());
+    }
+
+    @Override
+    public String toString(){
+        return "Profession: " + profession.toString() + "\n" + super.toString();
+    }
 }

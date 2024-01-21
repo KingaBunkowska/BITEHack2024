@@ -56,10 +56,4 @@ public class Attributes {
     public Attributes setHealth(int health){
         return new Attributes(maxHealth, health, strength, agility, intelligence);
     }
-
-    public static class LootRoom extends AbstractRoom {
-        public LootRoom(RoomType roomType, int column, int hight) {
-            super(roomType, column, hight);
-        }
-    }
 }

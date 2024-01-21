@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class AbstractRoom implements Place {
 
-    private List<AbstractRoom> childNeigbours= new ArrayList<>();
+    private List<AbstractRoom> childNeighbours = new ArrayList<>();
     private List<AbstractRoom> parentNeigbours= new ArrayList<>();
 
     protected RoomType roomType;
@@ -21,17 +21,17 @@ public abstract class AbstractRoom implements Place {
         this.hight=hight;
     }
 
-    public void setChildNeigbours(List<AbstractRoom> newNeigbours, int column) {
+    public void setChildNeighbours(List<AbstractRoom> newNeigbours, int column) {
 
-        this.childNeigbours=newNeigbours;
+        this.childNeighbours =newNeigbours;
         this.column=column;
     }
 
-    public void addChildNeigbour(AbstractRoom neighbour){
-        this.childNeigbours.add(neighbour);
+    public void addChildNeighbour(AbstractRoom neighbour){
+        this.childNeighbours.add(neighbour);
     }
 
-    public void addParentNeigbour(AbstractRoom neighbour){
+    public void addParentNeighbour(AbstractRoom neighbour){
         this.parentNeigbours.add(neighbour);
     }
 
@@ -46,7 +46,7 @@ public abstract class AbstractRoom implements Place {
 
     public String toString(){
         String communication="Column "+column+" Hight "+hight+" RoomType "+roomType.toString();
-        for( AbstractRoom currChild : childNeigbours){
+        for( AbstractRoom currChild : childNeighbours){
             communication=communication+" "+currChild.hight;
         }
         return communication;
