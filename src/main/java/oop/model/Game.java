@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Game {
 
-    private List<Enemy> enemies;
+    private List<Enemy> enemies= new ArrayList<>();
     private Dungeon dungeon;
     private Party party;
 
@@ -75,9 +75,9 @@ public class Game {
         List<AbstractRoom> rooms = dungeon.getAllRooms();
         List<EncounterRoom> encounterRooms = rooms.stream().filter(room->room.roomType == RoomType.ENCOUNTER).map(room->(EncounterRoom)room).toList();
 
-        this.enemies = interactivelyMakeEnemies(encounterRooms.size());
+//        this.enemies = interactivelyMakeEnemies(encounterRooms.size());
 
-        this.populateDungeons(enemies, encounterRooms);
+//        this.populateDungeons(enemies, encounterRooms);
     }
 
     public Dungeon getDungeon() {
@@ -99,11 +99,14 @@ public class Game {
 
     }
 
-    private void populateDungeons(List<Enemy> enemies, List<EncounterRoom> rooms) {
+    public void populateDungeons() {
+        List<AbstractRoom> rooms = dungeon.getAllRooms();
+        List<EncounterRoom> encounterRooms = rooms.stream().filter(room->room.roomType == RoomType.ENCOUNTER).map(room->(EncounterRoom)room).toList();
+
 
         int i=0;
 
-        for (EncounterRoom room: rooms){
+        for (EncounterRoom room: encounterRooms){
             room.addEnemy(enemies.get(i));
             i+=1;
         }
@@ -127,6 +130,15 @@ public class Game {
 
         Collections.shuffle(enemies);
         return enemies;
+    }
+
+    public void interactiveMakeEnemy(int power, Kind kind, CallOf callOf, int maxHealth){
+        Enemy enemy = new Enemy(power, kind, callOf, maxHealth);
+        enemies.add(enemy);
+    }
+
+    public boolean areAllEnemiesSet(){
+        return enemies.size()==dungeon.getAllRooms().stream().filter(abstractRoom -> abstractRoom.roomType==RoomType.ENCOUNTER).toList().size();
     }
 
     private void endGame(){
