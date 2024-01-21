@@ -14,14 +14,14 @@ import oop.model.presenter.DungeonPresenter;
 public class DungeonMap{
     private Game game;
 
-    public DungeonMap(Stage primaryStage) throws Exception {
+    public DungeonMap(Stage primaryStage,Game game) throws Exception {
+        this.game=game;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("dungeonVisualization.fxml"));
         AnchorPane viewRoot = loader.load();
         configureStage(primaryStage,viewRoot);
         DungeonPresenter dungeonPresenter =loader.getController();
         primaryStage.show();
-        game = new Game();
         dungeonPresenter.onGameStarted(game);
         dungeonPresenter.drawMap();
     }
