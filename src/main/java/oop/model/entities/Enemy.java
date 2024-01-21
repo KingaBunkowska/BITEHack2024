@@ -9,6 +9,7 @@ import static oop.model.entities.Hero.random;
 
 public class Enemy extends Entity{
     private final Kind kind;
+    private int level;
 
 
 
@@ -29,6 +30,7 @@ public class Enemy extends Entity{
         this.callOf = callOf;
 
         this.attributes = att.add(kind.getShiftOfAttributes());
+        this.level = power + 3;
     }
 
     public Behaviour getBehaviour() {
@@ -47,6 +49,10 @@ public class Enemy extends Entity{
     @Override
     public String toString(){
         return "Kind: " + kind.toString() + "\n" + super.toString();
+    }
+
+    public int getLevel(){
+        return level;
     }
 
 }
