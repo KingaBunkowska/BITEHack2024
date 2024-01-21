@@ -59,12 +59,12 @@ public abstract class AbstractRoom implements Place {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AbstractRoom that = (AbstractRoom) o;
-        return column == that.column && hight == that.hight && Objects.equals(childNeighbours, that.childNeighbours) && Objects.equals(parentNeigbours, that.parentNeigbours) && roomType == that.roomType;
+        return column == that.column && height == that.height && Objects.equals(childNeighbours, that.childNeighbours) && Objects.equals(parentNeigbours, that.parentNeigbours) && roomType == that.roomType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(childNeighbours, parentNeigbours, roomType, column, hight);
+        return Objects.hash(childNeighbours, parentNeigbours, roomType, column, height);
     }
 
 }

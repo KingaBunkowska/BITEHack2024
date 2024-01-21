@@ -3,7 +3,9 @@ package oop.model.loot;
 import oop.model.Attributes;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public enum LootItems {
 
@@ -27,9 +29,16 @@ public enum LootItems {
         this.attributes = attributes;
     }
 
-    public static List<LootItems> getItemsLeveled(int level){
-        return Arrays.stream(values()).filter(lootItems -> (lootItems.level == level)).toList();
+    public static List<LootItems> getItemsLeveled(int level) {
+        List<LootItems> lootItems = new LinkedList<>();
+        for (LootItems lootItem: values())
+            if(lootItem.level == level){
+                lootItems.add(lootItem);
+            }
+        return lootItems;
     }
+
+
 
     public Attributes getAttributes() {
         return attributes;

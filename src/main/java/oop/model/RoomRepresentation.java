@@ -4,10 +4,8 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import oop.model.dungeon.AbstractRoom;
-import javafx.scene.shape.StrokeType;
 
 import javafx.scene.shape.Rectangle;
-import oop.model.dungeon.RoomType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +20,9 @@ public class RoomRepresentation extends VBox {
     private final int line;
 
     public List<RoomRepresentation> children= new ArrayList<>();
+    private final Game game;
 
-
-    public RoomRepresentation(AbstractRoom abstractRoom){
+    public RoomRepresentation(AbstractRoom abstractRoom, Game game){
         this.abstractRoom=abstractRoom;
         this.column=abstractRoom.column;
         colorRectangle();
@@ -33,6 +31,7 @@ public class RoomRepresentation extends VBox {
         this.getChildren().addAll(this.rectangle);
         this.setAlignment(Pos.CENTER);
         this.children=children;
+        this.game = game;
     }
 
     public void colorRectangle(){
@@ -44,7 +43,7 @@ public class RoomRepresentation extends VBox {
         }
 
         rectangle.setOnMouseClicked(event -> {
-            this.mosueClicked();
+            this.mouseClicked();
         });
 
         rectangle.setOnMouseEntered(event -> {
@@ -59,7 +58,6 @@ public class RoomRepresentation extends VBox {
     }
 
     public void mouseEnter(){
-        System.out.println("Myszka najechała na pole!");
         updatEdges();
     }
 
@@ -76,12 +74,11 @@ public class RoomRepresentation extends VBox {
         for(RoomRepresentation child: children){
             child.mouseByeBye();
         }
-        System.out.println("Myszka opuściła pole!");
     }
 
 
-    public void mosueClicked(){
-        System.out.println("Rectangle Clicked!");
+    public void mouseClicked(){
+        game.simulateTurn(abstractRoom);
     }
 
 

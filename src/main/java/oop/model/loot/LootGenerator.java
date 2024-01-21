@@ -9,13 +9,13 @@ public class LootGenerator {
 
     public static Loot getRandomLootItem(int level, float progress){
         int number = BinomialDistribution.getRandomBinomial(level, progress);
-        int itemLevel = 0;
+        int itemLevel = 1;
 
         if (number>=20){
-            itemLevel = 2;
+            itemLevel = 3;
         }
         else if(number>=10){
-            itemLevel = 1;
+            itemLevel = 2;
         }
 
         List<LootItems> suitableItems = LootItems.getItemsLeveled(itemLevel);

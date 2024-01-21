@@ -65,7 +65,6 @@ public class Dungeon {
             corridors = new ArrayList<>(corridorSet);
 
             for (Corridor corridor : corridors){
-                System.out.println(corridor.toString());
                 predRooms.get(corridor.getBeg()).addChildNeighbour(currRooms.get(corridor.getEnd()));
 //                System.out.println(currRooms.get(corridor.getEnd()).toString()+"Koment"+predRooms.get(corridor.getBeg()).toString());
                 currRooms.get(corridor.getEnd()).addParentNeighbour(predRooms.get(corridor.getBeg()));

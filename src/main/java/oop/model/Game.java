@@ -1,14 +1,11 @@
 package oop.model;
 
-import jdk.incubator.vector.VectorOperators;
 import oop.model.dungeon.*;
 import oop.model.entities.*;
 import oop.model.loot.Loot;
 import oop.model.loot.LootGenerator;
 
 import java.util.*;
-
-import static java.lang.Integer.sum;
 
 public class Game {
 
@@ -71,16 +68,19 @@ public class Game {
         party.addValue(heroChosen.useItemReturnValue(lootChosen));
     }
 
-
-
     public void initializeDungeon(){
         Dungeon dungeon = new Dungeon(7);
+        this.dungeon = dungeon;
         List<AbstractRoom> rooms = dungeon.getAllRooms();
         List<EncounterRoom> encounterRooms = rooms.stream().filter(room->room.roomType == RoomType.ENCOUNTER).map(room->(EncounterRoom)room).toList();
 
         this.enemies = interactivelyMakeEnemies(encounterRooms.size());
 
         this.populateDungeons(enemies, encounterRooms);
+    }
+
+    public Dungeon getDungeon() {
+        return dungeon;
     }
 
     public void initializeParty(){
