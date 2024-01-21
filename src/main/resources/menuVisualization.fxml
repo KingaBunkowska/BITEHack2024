@@ -13,6 +13,6 @@
             <Image url="landing.jpg"/>
          </image>
       </ImageView>
-      <Button fx:id="startButton"  layoutX="317.0" layoutY="519.0" mnemonicParsing="false" style="-fx-opacity: 0;" text="Button" onAction="#handleStartButtonAction" prefWidth="200.0" prefHeight="80.0" />
+      <Button fx:id="startButton"  layoutX="317.0" layoutY="519.0" mnemonicParsing="false" style="-fx-opacity: 0;" text="Button" onAction="#handleStartButtonAction" prefWidth="300.0" prefHeight="150.0" />
    </children>
 </AnchorPane>
