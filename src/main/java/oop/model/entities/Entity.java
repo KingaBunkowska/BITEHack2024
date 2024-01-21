@@ -59,4 +59,8 @@ public abstract class Entity {
     public String toString(){
         return "Calling: " + callOf.toString() + "\nHealth: " + getHealth() + "/" + attributes.getMaxHealth() + "\nStats: "+ attributes.getStrength() + " " + attributes.getAgility() + " " + attributes.getIntelligence();
     }
+
+    public Attributes getAttributes() {
+        return attributes;
+    }
 }

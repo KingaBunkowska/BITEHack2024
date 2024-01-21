@@ -7,4 +7,6 @@ public interface Place {
 
         List<Place> getNeigbours();
 
+        void startEvent();
+
 }

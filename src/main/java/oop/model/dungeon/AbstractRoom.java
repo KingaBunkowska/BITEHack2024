@@ -13,18 +13,18 @@ public abstract class AbstractRoom implements Place {
 
     public int column;
 
-    public int hight;
+    public int height;
 
 
-    public AbstractRoom(RoomType roomType, int column, int hight){
+    public AbstractRoom(RoomType roomType, int column, int height){
         this.roomType=roomType;
         this.column=column;
-        this.hight=hight;
+        this.height =height;
     }
 
-    public void setChildNeighbours(List<AbstractRoom> newNeigbours, int column) {
+    public void setChildNeighbours(List<AbstractRoom> newNeighbours, int column) {
 
-        this.childNeighbours =newNeigbours;
+        this.childNeighbours =newNeighbours;
         this.column=column;
     }
 
@@ -46,9 +46,9 @@ public abstract class AbstractRoom implements Place {
     }
 
     public String toString(){
-        String communication="Column "+column+" Hight "+hight+" RoomType "+roomType.toString();
+        String communication="Column "+column+" Height "+ height +" RoomType "+roomType.toString();
         for( AbstractRoom currChild : childNeighbours){
-            communication=communication+" "+currChild.hight;
+            communication=communication+" "+currChild.height;
         }
         return communication;
 
@@ -66,4 +66,5 @@ public abstract class AbstractRoom implements Place {
     public int hashCode() {
         return Objects.hash(childNeighbours, parentNeigbours, roomType, column, hight);
     }
+
 }

@@ -28,7 +28,8 @@ public class RoomRepresentation extends VBox {
         this.abstractRoom=abstractRoom;
         this.column=abstractRoom.column;
         colorRectangle();
-        this.line=abstractRoom.hight;
+
+        this.line=abstractRoom.height;
         this.getChildren().addAll(this.rectangle);
         this.setAlignment(Pos.CENTER);
         this.children=children;
